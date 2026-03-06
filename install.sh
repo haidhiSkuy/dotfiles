@@ -31,6 +31,25 @@ if [[ $EUID -eq 0 ]]; then
 fi
 
 # =============================================================================
+#  SYSTEM PACKAGES (pacman)
+# =============================================================================
+section "System Packages"
+
+PACMAN_PKGS=(
+  fastfetch
+  base-devel
+  git
+  zsh
+  curl
+  wget
+  unzip
+)
+
+info "Installing pacman packages: ${PACMAN_PKGS[*]}"
+sudo pacman -S --needed --noconfirm "${PACMAN_PKGS[@]}"
+success "System packages installed."
+
+# =============================================================================
 #  FONTS
 # =============================================================================
 section "Nerd Fonts · CascadiaMono"
@@ -54,25 +73,6 @@ else
   rm -f "$FONT_ZIP"
   success "CascadiaMono installed."
 fi
-
-# =============================================================================
-#  SYSTEM PACKAGES (pacman)
-# =============================================================================
-section "System Packages"
-
-PACMAN_PKGS=(
-  fastfetch
-  base-devel
-  git
-  zsh
-  curl
-  wget
-  unzip
-)
-
-info "Installing pacman packages: ${PACMAN_PKGS[*]}"
-sudo pacman -S --needed --noconfirm "${PACMAN_PKGS[@]}"
-success "System packages installed."
 
 # =============================================================================
 #  PARU (AUR helper)
