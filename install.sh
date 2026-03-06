@@ -21,7 +21,7 @@ info()    { echo -e "${BLUE}${BOLD}[INFO]${RESET}  $*"; }
 success() { echo -e "${GREEN}${BOLD}[OK]${RESET}    $*"; }
 warn()    { echo -e "${YELLOW}${BOLD}[WARN]${RESET}  $*"; }
 error()   { echo -e "${RED}${BOLD}[ERROR]${RESET} $*"; exit 1; }
-section() { echo -e "\n${CYAN}${BOLD}━━━  $*  ━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━${RESET}"; }
+section() { echo -e "\n${CYAN}${BOLD}━━━━━━━━━━━━━━━━━  $*  ━━━━━━━━━━━━━━━━━${RESET}"; }
 
 command_exists() { command -v "$1" &>/dev/null; }
 
